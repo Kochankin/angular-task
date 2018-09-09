@@ -2,7 +2,7 @@ p, p+div { display: inline-block;}
 
 p+div{
     border: 0.01em solid black;
-    width: 85%;
+    width: 90%;
     vertical-align: middle;
     margin: auto 10px;
 }

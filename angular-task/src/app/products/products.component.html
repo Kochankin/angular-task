@@ -2,7 +2,8 @@
   <form>
     <label>Sort by</label>
     <select name="sort"> 
-        <option *ngFor="let sortParam of sortParams" [value]="sortParam">{{sortParam | uppercase }}</option>
+        <option></option>
+        <option *ngFor="let sortParam of sortParams" [value]="sortParam" (change)="sortProducts(sortParam)">{{sortParam | uppercase }} </option>
     </select>
   </form>   
 

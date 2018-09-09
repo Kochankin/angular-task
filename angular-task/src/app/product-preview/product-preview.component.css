@@ -18,7 +18,15 @@ span{
     text-transform: uppercase;
 }
 
+.product-preview:first-of-type{
+    margin-left: 0;
+}
+
 .top, .bottom{
     flex-direction: row;
     justify-content: space-between;
+}
+
+.product-name {
+    color: #aa9b77;
 }

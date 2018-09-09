@@ -2,10 +2,10 @@
   <ul>
     <li *ngFor="let productType of productTypes">
       <label>
-      <input type="checkbox" name="type" [value]="productType" (checkbox)="showType(productType)"/>
+      <input type="checkbox" name="type" [value]="productType" checked (change)="filterTypes(productType)"/>
           {{productType | uppercase }}
       </label>
     </li>
   </ul>
-  <button> See all products </button>
+  <button (click)="showAllTypes()"> See all products </button>
 </div>

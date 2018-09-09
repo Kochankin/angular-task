@@ -2,25 +2,35 @@ import { Injectable } from '@angular/core';
 import { Product } from './product';
 import { Products } from './products';
 import { ProductTypes } from './productTypes';
-//import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
-
   constructor() { }
+  productTypes = ProductTypes.slice(0);
 
   getTypes(){
-    return ProductTypes;
+    return this.productTypes;
   }
 
-  showType(productType){
-   let products = this.getProducts();
-   return this.filterTypes(products, productType);
+  filterTypes(productType){ 
+    let i = this.productTypes.indexOf(productType);
+    if (i >= 0) {
+      this.productTypes.splice(i, 1);
+    } else { 
+      this.productTypes.unshift(productType); // add it
+      // this.productTypes = ProductTypes.slice(0).filter((type) => {
+      //  return this.productTypes.includes(type);
+      // });    
+    }
   }
 
-  filterTypes(products, type){
+  showAllTypes(){
+    this.productTypes = ProductTypes.slice(0);
+  }
+
+  filterProducts(products, type){
     return products.filter(function(product){
       return product['type'] === type;
     });
@@ -29,6 +39,16 @@ export class ProductsService {
   getProducts():Product[] {
     return Products;
   }
+
+  sortProducts(sortParam){
+    let products = this.getProducts();
+      if (sortParam === 'PRICE'){
+        this.sortByPrice(products);
+      } else {
+        this.sortByAlphabet(products);
+      }
+    }
+  
 
   sortByPrice(products): Product[] {
     return products.sort(function(a, b){

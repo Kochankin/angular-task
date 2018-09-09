@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { NgModel} from '@angular/forms';
 import { ProductTypes } from './../productTypes';
 import { Product } from './../product';
 import { ProductsService } from '../products.service';
@@ -19,11 +20,20 @@ export class ProductsComponent implements OnInit {
 
   constructor(private productsService: ProductsService) { 
   }
-  getTypes() {
+
+  getTypes(){
     this.types = this.productsService.getTypes();
   }
-  
 
+  sortProducts(sortParam){
+    // if (sortParam === 'PRICE'){
+    //   this.productsService.sortByPrice(this.products);
+    // } else {
+    //   this.productsService.sortByAlphabet(this.products);
+    // }
+    this.productsService.sortProducts(sortParam);
+  }
+  
   ngOnInit() {
     this.getTypes();
   }

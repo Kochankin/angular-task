@@ -7,6 +7,22 @@ li {
     display: flex;
     justify-content: space-between;
     margin: 20px auto;
+    background: #f5f6f7;
+    padding: 30px;
 }
 
-button { text-transform: uppercase;}
+button { 
+    text-transform: uppercase;
+    background: #aa9b77;
+    color: #ffffff;
+    border-radius: 3px;
+    border: none;
+    padding: 5px 20px;
+    transition: 0.4s all ease-out;
+    border:1px solid transparent;
+}
+
+button:hover {
+    cursor: pointer;
+    border:1px solid #746d5d;
+}

@@ -1,15 +1,7 @@
-@font-face {
-    font-family: 'Quicksand';
-    src: url("./../assets/fonts/quicksand-bold-webfont.woff") format('woff');
-   }
 
-* {
-    font-family: Quicksand;
-    font-weight: bold;
-}
 
 .wrapper {
-    width: 90vw;
+    /*width: 90vw;*/
     overflow-x: scroll;
     margin: 0 auto;
 }

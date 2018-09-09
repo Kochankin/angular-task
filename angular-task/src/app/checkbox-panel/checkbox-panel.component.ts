@@ -9,14 +9,19 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./checkbox-panel.component.css']
 })
 export class CheckboxPanelComponent implements OnInit {
-  productTypes = ProductTypes;
+  productTypes = ProductTypes.slice(0);
   products = Products;
   
   constructor(private productsService: ProductsService) { }
 
-  showType(productType) {
-    this.productsService.showType(productType);
+  filterTypes(productType) {
+    this.productsService.filterTypes(productType);
   }
 
-  ngOnInit() {}
+  showAllTypes(){
+    this.productsService.showAllTypes();
+  }
+
+  ngOnInit() {
+  }
 }

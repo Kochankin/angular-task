@@ -20,8 +20,8 @@ export class ProductsPanelComponent implements OnInit {
   }
 
   getPanelProducts(): void{
-    let panelProducts = this.getProducts();
-    this.products = this.productsService.filterTypes(panelProducts, this.type);
+    let panelProducts = this.getProducts(); // filter!
+    this.products = this.productsService.filterProducts(panelProducts, this.type);
   }
 
   ngOnInit() {
