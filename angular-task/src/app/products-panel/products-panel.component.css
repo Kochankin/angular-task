@@ -1,0 +1,18 @@
+p, p+div { display: inline-block;}
+
+p+div{
+    border: 0.01em solid black;
+    width: 85%;
+    vertical-align: middle;
+    margin: auto 10px;
+}
+
+.products-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.products-container{
+    display: flex;
+    flex-direction: row;
+}

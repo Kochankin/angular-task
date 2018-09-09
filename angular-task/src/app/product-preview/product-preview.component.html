@@ -1,0 +1,23 @@
+<div class="product-preview" *ngIf="product">
+  <div class="top">
+    <form>
+      <label *ngIf="product.size.length > 1">Size</label>
+      <select name="size"> 
+          <option *ngFor="let size of product.size" [value]="size">{{size | uppercase }}</option>
+      </select>
+    </form>   
+
+    <div class="colors" *ngIf="product.colors.length">
+      <span *ngFor="let color of product.colors" [style.background] ="color"></span>
+    </div>
+  </div>
+
+  <img [src]="product.imgUrl" [alt]="product.name">
+
+  <div class="bottom">
+    <p>{{product.name}}</p>
+
+    <p>{{product.price}}&#8364;</p>
+  </div>
+</div>
+

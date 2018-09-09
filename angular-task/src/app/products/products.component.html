@@ -1,0 +1,13 @@
+<div>
+  <form>
+    <label>Sort by</label>
+    <select name="sort"> 
+        <option *ngFor="let sortParam of sortParams" [value]="sortParam">{{sortParam | uppercase }}</option>
+    </select>
+  </form>   
+
+  <div *ngFor="let type of types" >
+    <app-products-panel [type]="type"></app-products-panel>
+  </div>
+
+</div>
