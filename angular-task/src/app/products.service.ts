@@ -27,11 +27,7 @@ export class ProductsService {
   }
 
   showAllTypes(){
-    ProductTypes.slice(0).forEach((el) => {
-      if (!this.productTypes.includes(el)) {
-        this.productTypes.push(el);
-      } 
-    });
+    this.productTypes.splice(0, this.productTypes.length, ...ProductTypes);
   }
 
   getPanelProducts(type) {
