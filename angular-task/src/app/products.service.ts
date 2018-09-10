@@ -11,58 +11,37 @@ export class ProductsService {
   productTypes = ProductTypes.slice(0);
   products = Products;
 
-  getTypes(){
+  getTypes() {
     return this.productTypes;
   }
 
   filterTypes(productType){ 
     let i = this.productTypes.indexOf(productType);
-    if (i >= 0) {
+    if (i >= 0) { //remove
       this.productTypes.splice(i, 1);
-    } else { 
-      this.productTypes.unshift(productType); // add it
-      // this.productTypes = ProductTypes.slice(0).filter((type) => {
-      //  return this.productTypes.includes(type);
-      // });    
+    } else { // add
+      this.productTypes.push(productType); 
+      let filtered = ProductTypes.slice(0).filter(type => this.productTypes.includes(type));    
+      this.productTypes.splice(0, this.productTypes.length, ...filtered);
     }
   }
 
   showAllTypes(){
     ProductTypes.slice(0).forEach((el) => {
-      if(!this.productTypes.includes(el)){
+      if (!this.productTypes.includes(el)) {
         this.productTypes.push(el);
       } 
     });
   }
 
-  getPanelProducts(type){
+  getPanelProducts(type) {
     return this.products[type];
   }
 
-  sortProducts(sortParam){
-      if (sortParam === 'price'){
-        this.sortByPrice(this.products);
-      } else {
-        this.sortByAlphabet(this.products);  
-      }  
-    }
-  
-  sortByPrice(products) {
-    const types = Object.keys(products);
+  sortProducts(sortParam) {
+    const types = Object.keys(this.products);
     types.forEach((type) => {
-      products[type].sort(function(a, b){
-        return a['price'] - b['price'];
-      });
-    })
+      this.products[type].sort((a, b) => a[sortParam] > b[sortParam]);
+    });
   }
-
-  sortByAlphabet(products) {
-    const types = Object.keys(products);
-    types.forEach((type) => {
-      products[type].sort(function(a, b){
-        return a['name'] > b['name'];
-      });
-    })
-  }
-
 }

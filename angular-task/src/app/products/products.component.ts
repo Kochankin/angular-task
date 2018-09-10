@@ -1,10 +1,9 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
-import { NgModel} from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
 import { ProductTypes } from './../productTypes';
 import { Product } from './../product';
 import { ProductsService } from '../products.service';
 
-const SortParams: string[] = ['price', 'alphabet'];
+const SortParams: string[] = ['id', 'price', 'name'];
 
 @Component({
   selector: 'app-products',

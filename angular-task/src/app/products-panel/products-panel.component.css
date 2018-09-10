@@ -1,7 +1,7 @@
 p, p+div { display: inline-block;}
 
 p+div{
-    border: 0.01em solid black;
+    border: 0.05em solid black;
     width: 90%;
     vertical-align: middle;
     margin: auto 10px;
