@@ -9,6 +9,7 @@ import { ProductTypes } from './productTypes';
 export class ProductsService {
   constructor() { }
   productTypes = ProductTypes.slice(0);
+  products = Products;
 
   getTypes(){
     return this.productTypes;
@@ -27,38 +28,40 @@ export class ProductsService {
   }
 
   showAllTypes(){
-    this.productTypes = ProductTypes.slice(0);
-  }
-
-  filterProducts(products, type){
-    return products.filter(function(product){
-      return product['type'] === type;
+    ProductTypes.slice(0).forEach((el) => {
+      if(!this.productTypes.includes(el)){
+        this.productTypes.push(el);
+      } 
     });
   }
 
-  getProducts():Product[] {
-    return Products;
+  getPanelProducts(type){
+    return this.products[type];
   }
 
   sortProducts(sortParam){
-    let products = this.getProducts();
-      if (sortParam === 'PRICE'){
-        this.sortByPrice(products);
+      if (sortParam === 'price'){
+        this.sortByPrice(this.products);
       } else {
-        this.sortByAlphabet(products);
-      }
+        this.sortByAlphabet(this.products);  
+      }  
     }
   
-
-  sortByPrice(products): Product[] {
-    return products.sort(function(a, b){
-      return a['price'] - b['price'];
+  sortByPrice(products) {
+    const types = Object.keys(products);
+    types.forEach((type) => {
+      products[type].sort(function(a, b){
+        return a['price'] - b['price'];
+      });
     })
   }
 
-  sortByAlphabet(products): Product[] {
-    return products.sort(function(a, b){
-      return a['name'] > b['name'];
+  sortByAlphabet(products) {
+    const types = Object.keys(products);
+    types.forEach((type) => {
+      products[type].sort(function(a, b){
+        return a['name'] > b['name'];
+      });
     })
   }
 

@@ -16,10 +16,16 @@ span{
     margin: 30px;
     padding: 10px;
     text-transform: uppercase;
+    transition: 0.3s all ease-out;
+    border: 5px solid transparent;
 }
 
 .product-preview:first-of-type{
     margin-left: 0;
+}
+
+.product-preview:hover{
+    border: 5px solid #aa9b77;
 }
 
 .top, .bottom{

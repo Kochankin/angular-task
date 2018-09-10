@@ -15,13 +15,8 @@ export class ProductsPanelComponent implements OnInit {
   constructor(private productsService: ProductsService) { 
   }
 
-  getProducts() {
-    return this.productsService.getProducts();
-  }
-
-  getPanelProducts(): void{
-    let panelProducts = this.getProducts(); // filter!
-    this.products = this.productsService.filterProducts(panelProducts, this.type);
+  getPanelProducts(): void{ 
+    this.products = this.productsService.getPanelProducts(this.type);
   }
 
   ngOnInit() {
