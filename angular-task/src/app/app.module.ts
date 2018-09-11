@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+//import {NgbCarousel, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LogoComponent } from './logo/logo.component';
@@ -20,7 +21,9 @@ import { ProductPreviewComponent } from './product-preview/product-preview.compo
   ],
   imports: [
     BrowserModule, 
-    FormsModule
+    FormsModule,
+    //NgbCarousel,
+    //NgbCarouselConfig
   ],
   providers: [],
   bootstrap: [AppComponent]

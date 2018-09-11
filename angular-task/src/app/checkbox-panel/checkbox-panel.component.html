@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let productType of productTypes">
       <label>
-      <input type="checkbox" name="type" [value]="productType" checked (change)="filterTypes(productType)"/>
+      <input type="checkbox" name="type" [value]="productType" [checked]="isChecked[productType]" (change)="filterTypes(productType)"/>
           {{productType | uppercase }}
       </label>
     </li>
