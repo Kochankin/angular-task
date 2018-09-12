@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { ProductTypes } from './../productTypes';
-import { Product } from './../product';
+//import { Product } from './../product';
 import { ProductsService } from '../products.service';
 
 const SortParams: string[] = ['id', 'price', 'name'];
@@ -13,8 +13,8 @@ const SortParams: string[] = ['id', 'price', 'name'];
 export class ProductsComponent implements OnInit {
   sortParams = SortParams;
   productTypes = ProductTypes;
-  products: Product[];
-  product: Product;
+  products: any[];
+  product: any;
   types: string[];
 
   constructor(private productsService: ProductsService) { 

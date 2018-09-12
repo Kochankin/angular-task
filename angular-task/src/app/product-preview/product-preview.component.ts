@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Product } from './../product';
+//import { Product } from './../product';
 import { ProductsService } from '../products.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./product-preview.component.css']
 })
 export class ProductPreviewComponent implements OnInit {
-  products: Product[];
+  products: any[];
 
   @Input() product;
 

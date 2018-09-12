@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Product } from './product';
+import { Observable, of } from 'rxjs';
+//import { Product } from './product';
 import { Products } from './products';
 import { ProductTypes } from './productTypes';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class ProductsService {
   constructor() { }
   productTypes = ProductTypes.slice(0);
@@ -28,6 +27,10 @@ export class ProductsService {
 
   showAllTypes(){
     this.productTypes.splice(0, this.productTypes.length, ...ProductTypes);
+  }
+
+  getProducts(){
+    return this.products;
   }
 
   getPanelProducts(type) {
