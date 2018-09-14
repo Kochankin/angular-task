@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ProductTypes } from './../productTypes';
 import { Products } from './../products';
 import { ProductsService } from '../products.service';
@@ -16,6 +16,12 @@ export class CheckboxPanelComponent implements OnInit {
     women: true,
     children: true
   };
+
+  updateCheckbox(productType){
+    if (this.isChecked[productType]){
+      return "checked";
+    }
+  }
 
   constructor(private productsService: ProductsService) { }
 

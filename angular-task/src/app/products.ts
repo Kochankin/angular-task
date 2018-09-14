@@ -7,7 +7,8 @@ export const Products = {
             type: 'men',
             size: ['s', 'm', 'l', 'xl'],
             colors: ['#165eb9', '#ffe637', '#535253'],
-            imgUrl: './../assets/img/item1.png',
+            imgUrlMax: './../assets/img/item1.png',
+            imgUrlMin: './../assets/img/item1-min.png',
             name: 't-shirt',
             price: 5.00
         },
@@ -16,7 +17,8 @@ export const Products = {
             type: 'men',
             size: ['s', 'm', 'l', 'xl'],
             colors: [],
-            imgUrl: './../assets/img/item2.png',
+            imgUrlMax: './../assets/img/item2.png',
+            imgUrlMin: './../assets/img/item2-min.png',
             name: 'pants forclaz',
             price: 30.00
         },
@@ -25,7 +27,8 @@ export const Products = {
             type: 'men',
             size: ['10litri'],
             colors: [],
-            imgUrl: './../assets/img/item3.png',
+            imgUrlMax: './../assets/img/item3.png',
+            imgUrlMin: './../assets/img/item3-min.png',
             name: 'backpack',
             price: 60.00
         },
@@ -34,7 +37,8 @@ export const Products = {
             type: 'men',
             size: ['5litri'],
             colors: [],
-            imgUrl: './../assets/img/item12.png',
+            imgUrlMax: './../assets/img/item12.png',
+            imgUrlMin: './../assets/img/item12-min.png',
             name: 'backpack',
             price: 100.00
         },
@@ -43,7 +47,8 @@ export const Products = {
             type: 'men',
             size: ['s', 'm', 'l', 'xl'],
             colors: [],
-            imgUrl: './../assets/img/item11.png',
+            imgUrlMax: './../assets/img/item11.png',
+            imgUrlMin: './../assets/img/item11-min.png',
             name: 'pants forclaz',
             price: 40.00
         },
@@ -52,7 +57,8 @@ export const Products = {
             type: 'men',
             size: ['s', 'm', 'l', 'xl'],
             colors: ['#ffffff', '#535253'],
-            imgUrl: './../assets/img/item10.png',
+            imgUrlMax: './../assets/img/item10.png',
+            imgUrlMin: './../assets/img/item10-min.png',
             name: 't-shirt',
             price: 15.00
         }
@@ -63,7 +69,8 @@ export const Products = {
             type: 'women',
             size: ['xs', 's', 'm', 'l'],
             colors: [],
-            imgUrl: './../assets/img/item4.png',
+            imgUrlMax: './../assets/img/item4.png',
+            imgUrlMin: './../assets/img/item4-min.png',
             name: 'giacket',
             price: 60.00
         },
@@ -72,7 +79,8 @@ export const Products = {
             type: 'women',
             size: ['36', '37', '38', '39'],
             colors: [],
-            imgUrl: './../assets/img/item5.png',
+            imgUrlMax: './../assets/img/item5.png',
+            imgUrlMin: './../assets/img/item5-min.png',
             name: 'trekking shoes',
             price: 80.00
         },
@@ -81,7 +89,8 @@ export const Products = {
             type: 'women',
             size: ['xs', 's', 'm', 'l'],
             colors: ['#d3a7ac', '#ffffff'],
-            imgUrl: './../assets/img/item6.png',
+            imgUrlMax: './../assets/img/item6.png',
+            imgUrlMin: './../assets/img/item6-min.png',
             name: 't-shirt',
             price: 20.00
         },
@@ -90,7 +99,8 @@ export const Products = {
             type: 'women',
             size: ['36', '37', '38', '39'],
             colors: [],
-            imgUrl: './../assets/img/item14.png',
+            imgUrlMax: './../assets/img/item14.png',
+            imgUrlMin: './../assets/img/item14-min.png',
             name: 'trekking shoes',
             price: 90.00
         },
@@ -99,7 +109,8 @@ export const Products = {
             type: 'women',
             size: ['xs', 's', 'm', 'l'],
             colors: ['#e95ba1', '#1cc128', '#c1331c'],
-            imgUrl: './../assets/img/item15.png',
+            imgUrlMax: './../assets/img/item15.png',
+            imgUrlMin: './../assets/img/item15-min.png',
             name: 't-shirt',
             price: 10.00
         },
@@ -108,7 +119,8 @@ export const Products = {
             type: 'women',
             size: ['xs', 's', 'm', 'l'],
             colors: [],
-            imgUrl: './../assets/img/item13.png',
+            imgUrlMax: './../assets/img/item13.png',
+            imgUrlMin: './../assets/img/item13-min.png',
             name: 'giacket',
             price: 40.00
         }
@@ -119,7 +131,8 @@ export const Products = {
             type: 'children',
             size: ['xs', 's', 'm', 'l'],
             colors: [],
-            imgUrl: './../assets/img/item7.png',
+            imgUrlMax: './../assets/img/item7.png',
+            imgUrlMin: './../assets/img/item7-min.png',
             name: 't-shirt',
             price: 20.00
         },
@@ -128,7 +141,8 @@ export const Products = {
             type: 'children',
             size: ['xs', 's', 'm', 'l'],
             colors: ['#f51111', '#2411e0'],
-            imgUrl: './../assets/img/item8.png',
+            imgUrlMax: './../assets/img/item8.png',
+            imgUrlMin: './../assets/img/item8-min.png',
             name: 'sweatshirt',
             price: 30.00
         },
@@ -137,7 +151,8 @@ export const Products = {
             type: 'children',
             size: ['26', '27', '28', '29'],
             colors: ['#cb73b2', '#3ac9f8', '#e8f06d'],
-            imgUrl: './../assets/img/item9.png',
+            imgUrlMax: './../assets/img/item9.png',
+            imgUrlMin: './../assets/img/item9-min.png',
             name: 'sneakers',
             price: 70.00
         },
@@ -146,7 +161,8 @@ export const Products = {
             type: 'children',
             size: ['xs', 's', 'm', 'l'],
             colors: [],
-            imgUrl: './../assets/img/item16.png',
+            imgUrlMax: './../assets/img/item16.png',
+            imgUrlMin: './../assets/img/item16-min.png',
             name: 't-shirt',
             price: 10.00
         },
@@ -155,7 +171,8 @@ export const Products = {
             type: 'children',
             size: ['xs', 's', 'm', 'l'],
             colors: ['#e0167f', '#15b0c2'],
-            imgUrl: './../assets/img/item17.png',
+            imgUrlMax: './../assets/img/item17.png',
+            imgUrlMin: './../assets/img/item17-min.png',
             name: 'sweatshirt',
             price: 50.00
         },
@@ -164,7 +181,8 @@ export const Products = {
             type: 'children',
             size: ['26', '27', '28', '29'],
             colors: ['#ffffff', '#000000'],
-            imgUrl: './../assets/img/item18.png',
+            imgUrlMax: './../assets/img/item18.png',
+            imgUrlMin: './../assets/img/item18-min.png',
             name: 'sneakers',
             price: 45.00
         }

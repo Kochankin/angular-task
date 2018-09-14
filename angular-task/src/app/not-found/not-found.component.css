@@ -2,3 +2,20 @@ div {
     text-align: center;
     padding: 10%;
 }
+
+button{
+    text-transform: uppercase;
+    display: block;
+    margin: 100px auto;
+    padding: 20px 30px;
+    background: #aa9b77;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.4s all ease-out;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+button:hover{
+    border:1px solid #746d5d;
+}

@@ -1,14 +1,21 @@
+.wrapper {
+    width: 100%;
+    background: #f5f6f7;
+}
+
 li {
-    list-style: none;
     display: inline-block;
+}
+
+ul {
+    padding: 20px 0;
+    margin-bottom: 0;
 }
 
 .checkbox-panel {
     display: flex;
     justify-content: space-between;
-    margin: 20px auto;
-    background: #f5f6f7;
-    padding: 30px;
+    padding: 35px 0;
 }
 
 button { 
@@ -16,8 +23,7 @@ button {
     background: #aa9b77;
     color: #ffffff;
     border-radius: 3px;
-    border: none;
-    padding: 5px 20px;
+    padding: 20px 40px;
     transition: 0.4s all ease-out;
     border:1px solid transparent;
 }
@@ -25,4 +31,47 @@ button {
 button:hover {
     cursor: pointer;
     border:1px solid #746d5d;
+    box-shadow: 1px 2px 2px #746d5d;
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+li.checkbox{
+    position: relative;
+    margin-right: 40px;
+}
+
+label {margin-bottom: 0;}
+
+label::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    border: 3px solid #cccccc;
+    border-radius: 3px;
+}
+
+label.checked::before{border: 3px solid #aa9b77;}
+label.checked::after {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 8px;
+    background: transparent;
+    top: 7px;
+    left: 6px;
+    border: 3px solid #aa9b77;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
 }

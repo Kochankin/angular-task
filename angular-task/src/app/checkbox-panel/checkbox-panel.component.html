@@ -1,11 +1,13 @@
-<div class="checkbox-panel">
-  <ul>
-    <li *ngFor="let productType of productTypes">
-      <label>
-      <input type="checkbox" name="type" [value]="productType" [checked]="isChecked[productType]" (change)="filterTypes(productType)"/>
-          {{productType | uppercase }}
-      </label>
-    </li>
-  </ul>
-  <button (click)="showAllTypes()"> See all products </button>
+<div class="wrapper">
+  <div class="checkbox-panel content">
+    <ul>
+      <li *ngFor="let productType of productTypes" class="checkbox">
+        <label [class]="updateCheckbox(productType)">
+        <input type="checkbox" name="type" [value]="productType" (change)="filterTypes(productType)"/>
+            {{productType | uppercase }}
+        </label>
+      </li>
+    </ul>
+    <button (click)="showAllTypes()"> See all products </button>
+  </div>
 </div>

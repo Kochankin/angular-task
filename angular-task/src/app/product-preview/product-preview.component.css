@@ -14,7 +14,7 @@ span{
     flex-direction: column;
     background: #f5f6f7;
     margin: 20px;
-    padding: 20px;
+    padding: 32px;
     text-transform: uppercase;
     transition: 0.3s all ease-out;
     border: 5px solid transparent;
