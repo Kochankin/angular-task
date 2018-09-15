@@ -1,9 +1,8 @@
 import { Component, OnInit} from '@angular/core';
-import { ProductTypes } from './../productTypes';
-//import { Product } from './../product';
-import { ProductsService } from '../products.service';
-
-const SortParams: string[] = ['id', 'price', 'name'];
+import { ProductsTemplate } from './../const/productsTemplate';
+import { SortParams } from './../const/sortParams';
+import { ProductsService } from '../service/products.service';
+import { ProductTypesService } from '../service/product-types.service';
 
 @Component({
   selector: 'app-products',
@@ -12,24 +11,25 @@ const SortParams: string[] = ['id', 'price', 'name'];
 })
 export class ProductsComponent implements OnInit {
   sortParams = SortParams;
-  productTypes = ProductTypes;
-  products: any[];
-  product: any;
+  productTypes: string[];
+  products: ProductsTemplate;
+  product: object;
   types: string[];
 
-  constructor(private productsService: ProductsService) { 
+  constructor(
+    private productsService: ProductsService, 
+    private productTypesService: ProductTypesService) { }
+
+  ngOnInit():void {
+    this.getTypes();
+    this.productTypes = this.productTypesService.getOriginalProductTypes();
   }
 
-  getTypes(){
-    this.types = this.productsService.getTypes();
+  getTypes():void{
+    this.types = this.productTypesService.getTypes();
   }
 
-  sortProducts(sortParam){
+  sortProducts(sortParam):void{
     this.productsService.sortProducts(sortParam);
   }
-
-  ngOnInit() {
-    this.getTypes();
-  }
-
 }

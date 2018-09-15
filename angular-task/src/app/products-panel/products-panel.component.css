@@ -1,4 +1,3 @@
-
 .type+div{
     width: 100%;
     margin-bottom: 62px;
@@ -16,15 +15,9 @@ section>div{
     justify-content: space-between;
 }
 
-section>div.odd {
-    flex-direction: row-reverse;
-}
-section>div.odd>p{
-    margin-left: 10px;
-}
-section>div.even>p{
-    margin-right: 10px;
-}
+section>div.odd {flex-direction: row-reverse;}
+section>div.odd>p{margin-left: 10px;}
+section>div.even>p{margin-right: 10px;}
 
 .products-panel {
     display: flex;
@@ -56,7 +49,6 @@ i {
     text-align: right;
     font-size: 18px;
     color: #aa9b77;
-
 }
 
 

@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-//import { Product } from './../product';
-import { ProductsService } from '../products.service';
-
-const visibleProductsNum = 3;
+import { VisibleProductsNum } from './../const/visibleProductsNum';
+import { ProductsService } from '../service/products.service';
 
 @Component({
   selector: 'app-products-panel',
@@ -10,45 +8,39 @@ const visibleProductsNum = 3;
   styleUrls: ['./products-panel.component.css']
 })
 export class ProductsPanelComponent implements OnInit {
-  items: Array<any> = []
+  repeatItemsNum:number = 1;
+  items = [this.repeatItemsNum];
   products:object[];
   types: string[];
-  shownProductsNum:number = visibleProductsNum;
-  totalProductsAmount:number;
+  shownProductsNum:number = VisibleProductsNum;
+  totalProductsNum:number;
   @Input() type;
   @Input() index;
 
-  constructor(private productsService: ProductsService) { 
-  }
+  constructor(private productsService: ProductsService) { }
+
+  ngOnInit():void {
+    this.getPanelProducts();
+ }
   
-  getPanelProducts(): void{ 
+  getPanelProducts():void{ 
     this.products = this.productsService.getPanelProducts(this.type);
-    this.totalProductsAmount = this.products.length;
+    this.totalProductsNum = this.products.length;
   }
 
-  ngOnInit() {
-     this.getPanelProducts();
-     this.items = [1];
+  setClass(i):string{
+    return (i % 2 !== 0) ? "odd" : "even"; 
   }
 
-  setClass(i){
-    if (i % 2 !== 0) {
-      return "odd";
-    } else {
-      return "even";
-    }
-  }
-
-  decreaseShownProductsNum(){
-    if (this.shownProductsNum !== visibleProductsNum){
+  decreaseShownProductsNum():void{
+    if (this.shownProductsNum !== VisibleProductsNum){
       this.shownProductsNum--;
     }
   }
 
-  increaseShownProductsNum(){
-    if (this.shownProductsNum !== this.totalProductsAmount){
+  increaseShownProductsNum():void{
+    if (this.shownProductsNum !== this.totalProductsNum){
       this.shownProductsNum++;
     }
   }
-
 }

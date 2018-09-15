@@ -1,6 +1,6 @@
-//import {Product} from "./product";
+import {ProductsTemplate} from "./ProductsTemplate";
 
-export const Products = {
+export const Products: ProductsTemplate = {
     men: [
             {
             id: 1,

@@ -1,0 +1,1 @@
+export const SortParams: string[] = ['id', 'price', 'name'];

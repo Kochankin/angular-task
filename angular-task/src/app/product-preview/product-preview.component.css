@@ -6,9 +6,7 @@ span{
     margin: 2px;
 }
 
-.product-preview, .top, .bottom{
-    display: flex;
-}
+.product-preview, .top, .bottom{display: flex;}
 
 .product-preview{
     flex-direction: column;
@@ -20,9 +18,7 @@ span{
     border: 5px solid transparent;
 }
 
-.product-preview:hover{
-    border: 5px solid #aa9b77;
-}
+.product-preview:hover{border: 5px solid #aa9b77;}
 
 .top, .bottom{
     flex-direction: row;
@@ -31,9 +27,7 @@ span{
 
 .bottom {line-height: 22px;}
 
-.product-name {
-    color: #aa9b77;
-}
+.product-name {color: #aa9b77;}
 
 img {
     cursor: pointer;

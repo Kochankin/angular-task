@@ -2,12 +2,17 @@
   <div class="checkbox-panel content">
     <ul>
       <li *ngFor="let productType of productTypes" class="checkbox">
-        <label [class]="updateCheckbox(productType)">
-        <input type="checkbox" name="type" [value]="productType" (change)="filterTypes(productType)"/>
+        <label [class]="updateCheckbox(productType, isChecked)">
+        <input 
+          type="checkbox" 
+          name="type" 
+          [value]="productType" 
+          (change)="filterTypes(productType, isChecked)"
+        />
             {{productType | uppercase }}
         </label>
       </li>
     </ul>
-    <button (click)="showAllTypes()"> See all products </button>
+    <button (click)="showAllTypes(isChecked)"> See all products </button>
   </div>
 </div>

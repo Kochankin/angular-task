@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-//import { Product } from './../product';
-import { ProductsService } from '../products.service';
+import { ProductsTemplate } from './../const/productsTemplate';
 
 @Component({
   selector: 'app-product-preview',
@@ -8,13 +7,9 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./product-preview.component.css']
 })
 export class ProductPreviewComponent implements OnInit {
-  products: any[];
-
+  products: ProductsTemplate;
   @Input() product;
 
-  constructor(private productsService: ProductsService) { 
-  }
-  ngOnInit() {
-  }
-
+  constructor() { }
+  ngOnInit() {}
 }

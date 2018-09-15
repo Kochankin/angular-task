@@ -3,10 +3,7 @@
     background: #f5f6f7;
 }
 
-li {
-    display: inline-block;
-}
-
+li {display: inline-block;}
 ul {
     padding: 20px 0;
     margin-bottom: 0;

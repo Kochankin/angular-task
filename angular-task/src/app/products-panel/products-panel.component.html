@@ -4,7 +4,7 @@
     <div></div>
   </div>
 
-  <p class="items-counter">{{shownProductsNum}} / {{totalProductsAmount}} </p>
+  <p class="items-counter">{{shownProductsNum}} / {{totalProductsNum}} </p>
 
   <div class="products-container" #container>   
     <div
@@ -23,7 +23,6 @@
     </ng-template>
       
     <ng-template #product let-item let-i="index" >
-      
       <app-product-preview *ngFor="let product of products" [product]="product" ></app-product-preview>
     </ng-template>
   </div>

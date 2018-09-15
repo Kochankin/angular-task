@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { ProductsService } from '../products.service';
+import { ProductsService } from '../service/products.service';
+import { ProductsTemplate } from '../const/ProductsTemplate';
 
 @Component({
   selector: 'app-product-details',
@@ -9,8 +10,8 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit  {
-   product;
-   products;
+   product: object;
+   products: ProductsTemplate;
 
   constructor(
     private productsService: ProductsService,
@@ -19,14 +20,16 @@ export class ProductDetailsComponent implements OnInit  {
   ) {}
 
   ngOnInit(): void {
-    this.getProduct(); 
+    this.product = this.getProduct(this.products); 
   }
 
-  getProduct(): void {
+  getProduct(products): object {
     const id = +this.route.snapshot.paramMap.get('id'); 
-    this.products = this.productsService.getProducts();
-    let prods = this.products['men'].concat(this.products['women']).concat(this.products['children']);
-    this.product = prods.find(product => product.id === id);
+    products = this.productsService.getProducts();
+    for (let type in products){
+      let found = products[type].find(product => product.id === id);
+      if (found) { return found;}
+    }
   }
 
   goBack(): void {

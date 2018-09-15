@@ -1,6 +1,4 @@
-* {
-    text-transform: uppercase;
-}
+* {text-transform: uppercase;}
 span{
     width: 20px;
     height: 20px;
@@ -10,15 +8,12 @@ span{
 }
 
 button{
-    border: none;
-    background: none;
-    cursor: pointer;
+    /* border: none;
+    background: none;    */
     transition: 0.4s all ease-out;
 }
 
-button:hover{
-    text-shadow: 1px 1px 1px #a4a7ab;
-}
+button:hover{text-shadow: 1px 1px 1px #a4a7ab;}
 
 .wrapper{background: #f5f6f7;}
 .back-panel {
@@ -59,11 +54,7 @@ table{
     border-collapse: separate;
 }
 
-td:first-child{
-    text-align: right;
-}
+td:first-child{text-align: right;}
 
-img {
-    height: 708px;
-}
+img {height: 708px;}
 

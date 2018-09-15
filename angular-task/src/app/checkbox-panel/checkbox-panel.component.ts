@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { ProductTypes } from './../productTypes';
-import { Products } from './../products';
-import { ProductsService } from '../products.service';
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../service/products.service';
+import { ProductTypesService } from '../service/product-types.service';
 
 @Component({
   selector: 'app-checkbox-panel',
@@ -9,32 +8,38 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./checkbox-panel.component.css']
 })
 export class CheckboxPanelComponent implements OnInit {
-  productTypes = ProductTypes.slice(0);
-  products = Products;
+  productTypes: string[];
+  products: object;
   isChecked = {
     men: true,
     women: true,
     children: true
   };
 
-  updateCheckbox(productType){
-    if (this.isChecked[productType]){
+  constructor(
+    private productsService: ProductsService,
+    private productTypesService: ProductTypesService) { }
+
+  ngOnInit():void {
+    this.productTypes = this.productTypesService.getOriginalProductTypes();
+    this.products = this.productsService.getOriginalProducts();
+  }
+
+  updateCheckbox(productType, isChecked):string{
+    if (isChecked[productType]){
       return "checked";
     }
   }
 
-  constructor(private productsService: ProductsService) { }
-
-  filterTypes(productType) {
-    this.isChecked[productType] = !this.isChecked[productType];
-    this.productsService.filterTypes(productType);
+  filterTypes(productType, isChecked):void {
+    isChecked[productType] = !isChecked[productType];
+    this.productTypesService.filterTypes(productType);
   }
 
-  showAllTypes(){
-    ProductTypes.forEach((type => this.isChecked[type] = true));
-    this.productsService.showAllTypes();
-  }
-
-  ngOnInit() {
+  showAllTypes(isChecked): void{
+    for (let type in isChecked) { 
+      isChecked[type] = true;
+    }
+    this.productTypesService.showAllTypes();
   }
 }
