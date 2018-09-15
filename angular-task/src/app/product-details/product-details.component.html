@@ -1,34 +1,38 @@
 <app-logo></app-logo>
 
-<div class="back-panel">
-  <button (click)="goBack()"> <i class="fas fa-angle-left"></i> back to catalog</button>
+<div class="wrapper">
+  <div class="back-panel content">
+    <button (click)="goBack()"> <i class="fas fa-angle-left"></i> back to catalog</button>
+  </div>
 </div>
+>
 
-<section>
-  <div>
-    <p>{{ product.name | uppercase}}</p>
-    <div></div>
-  </div>
+<div class="content">
+  <section>
+    <div class="product-name">
+      <p>{{ product.name | uppercase}}</p>
+      <div></div>
+    </div>
 
-  <div class="product-item">
-    <img [src]="product.imgUrlMax" [alt]="product.name">
+    <div class="product-item">
+      <img [src]="product.imgUrlMax" [alt]="product.name">
 
-    <table>
-      <tr>
-        <td>{{product.price}}&#8364;</td>
-        <td>price</td>
-      </tr>
+      <table>
+        <tr>
+          <td>{{product.price}}&#8364;</td>
+          <td>price</td>
+        </tr>
 
-      <tr *ngIf="product.colors.length">
-        <td><span *ngFor="let color of product.colors" [style.background] ="color"></span></td>
-        <td>colors</td>
-      </tr>
-      
-      <tr>
-        <td>{{product.size.join(', ')}}</td>
-        <td>sizes</td>
-      </tr>
-    </table>
-  </div>
-</section>
-
+        <tr *ngIf="product.colors.length">
+          <td><span *ngFor="let color of product.colors" [style.background] ="color"></span></td>
+          <td>colors</td>
+        </tr>
+        
+        <tr>
+          <td>{{product.size.join(', ')}}</td>
+          <td>sizes</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</div>

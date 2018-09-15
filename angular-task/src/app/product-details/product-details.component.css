@@ -20,23 +20,29 @@ button:hover{
     text-shadow: 1px 1px 1px #a4a7ab;
 }
 
+.wrapper{background: #f5f6f7;}
 .back-panel {
-    background: #f5f6f7;
-    padding: 65px 0 65px 100px;
-    margin: 25px 0;
+    padding: 65px 0;
+    margin: 0 auto;
 }
 
 i {margin-right: 30px;}
 
-p, p+div { display: inline-block;}
+.product-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
-p { margin: 84px 0;}
+.product-name>div{
+    width: 80%;
+    margin-bottom: 62px;
+    border-bottom: 1px solid grey;
+}
 
-p+div{
-    border: 0.05em solid black;
-    width: 85%;
-    vertical-align: middle;
-    margin: auto 10px;
+.product-name>p{
+    font-size: 20px;
+    margin: 50px 10px 50px 0;
 }
 
 .product-item {
@@ -60,3 +66,4 @@ td:first-child{
 img {
     height: 708px;
 }
+
