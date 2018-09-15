@@ -1,8 +1,10 @@
 <section class="products-panel">
-  <div>
-    <p>{{ type | uppercase}}</p>
+  <div [class]="setClass(index)">
+    <p class="type">{{ type | uppercase}}</p>
     <div></div>
   </div>
+
+  <p class="items-counter">{{shownProductsNum}} / {{totalProductsAmount}} </p>
 
   <div class="products-container" #container>   
     <div
@@ -14,15 +16,15 @@
       [$next]="next"
       [$item]="product"></div>
       
-    <ng-template #prev><i class="fas fa-angle-left"></i>
+    <ng-template #prev ><i class="fas fa-angle-left" (click)="decreaseShownProductsNum()"></i>
     </ng-template>
     
-    <ng-template #next><i class="fas fa-angle-right"></i>
+    <ng-template #next><i class="fas fa-angle-right" (click)="increaseShownProductsNum()"></i>
     </ng-template>
       
     <ng-template #product let-item let-i="index" >
       
-      <app-product-preview *ngFor="let product of products" [product]="product" routerLink="/detail/{{product.id}}"></app-product-preview>
+      <app-product-preview *ngFor="let product of products" [product]="product" ></app-product-preview>
     </ng-template>
   </div>
       

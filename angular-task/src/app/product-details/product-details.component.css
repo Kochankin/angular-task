@@ -56,3 +56,7 @@ table{
 td:first-child{
     text-align: right;
 }
+
+img {
+    height: 708px;
+}

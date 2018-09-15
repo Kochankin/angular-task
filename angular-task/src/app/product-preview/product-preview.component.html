@@ -1,23 +1,25 @@
 <div class="product-preview" *ngIf="product">
   <div class="top">
-    <form>
-      <label *ngIf="product.size.length > 1">Size</label>
+    <form *ngIf="product.size.length > 1" class="size">
+      <label >Size</label>
       <select name="size"> 
           <option *ngFor="let size of product.size" [value]="size">{{size | uppercase }}</option>
       </select>
-    </form>   
+    </form>  
+
+    <p *ngIf="product.size.length === 1" class="size">{{product.size[0]}}</p>
 
     <div class="colors" *ngIf="product.colors.length">
       <span *ngFor="let color of product.colors" [style.background] ="color"></span>
     </div>
   </div>
 
-  <img [src]="product.imgUrlMin" [alt]="product.name">
+  <img [src]="product.imgUrlMin" [alt]="product.name" routerLink="/detail/{{product.id}}">
 
   <div class="bottom">
     <p class="product-name">{{product.name}}</p>
 
-    <p>{{product.price}}&#8364;</p>
+    <p class="price">{{product.price}}&#8364;</p>
   </div>
 </div>
 

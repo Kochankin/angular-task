@@ -6,8 +6,6 @@
     </select>
   </form>   
 
-  <div *ngFor="let type of types" >
-    <app-products-panel [type]="type"></app-products-panel>
-  </div>
+  <app-products-panel [type]="type" *ngFor="let type of types; let index=index" [index]="index"></app-products-panel>
 
 </div>
