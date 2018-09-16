@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ProductTypes } from './../const/productTypes';
-import { Observable, of } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class ProductTypesService {
