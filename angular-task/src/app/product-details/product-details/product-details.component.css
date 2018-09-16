@@ -1,4 +1,10 @@
 * {text-transform: uppercase;}
+div.logo {
+    margin: 30px auto 40px;
+    text-align: center;
+}
+div.logo>img { width: 300px;}
+
 span{
     width: 20px;
     height: 20px;
@@ -56,5 +62,5 @@ table{
 
 td:first-child{text-align: right;}
 
-img {height: 708px;}
+img:not(div.logo>img) {height: 708px;}
 
