@@ -12,9 +12,10 @@ import { ProductTypesService } from '../service/product-types.service';
 export class ProductsComponent implements OnInit {
   sortParams = SortParams;
   productTypes: string[];
-  products: ProductsTemplate;
+  products;
   product: object;
   types: string[];
+  selected;
 
   constructor(
     private productsService: ProductsService, 
@@ -23,13 +24,19 @@ export class ProductsComponent implements OnInit {
   ngOnInit():void {
     this.getTypes();
     this.productTypes = this.productTypesService.getOriginalProductTypes();
+    this.selected = this.productsService.getSelected();
   }
 
-  getTypes():void{
-    this.types = this.productTypesService.getTypes();
+  getTypes(): void{
+    this.types = this.productTypesService.getProductTypes();
   }
 
   sortProducts(sortParam):void{
     this.productsService.sortProducts(sortParam);
+    this.selected.sortParam = sortParam;
+  }
+
+  onSelect(sortParam){
+    return (sortParam === this.selected)? 'true' : 'false';
   }
 }

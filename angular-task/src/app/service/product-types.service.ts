@@ -1,13 +1,23 @@
 import { Injectable } from '@angular/core';
 import { ProductTypes } from './../const/productTypes';
+import { Observable, of } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class ProductTypesService {
   constructor() { }
   productTypes = ProductTypes.slice(0);
+  isChecked = {
+    men: true,
+    women: true,
+    children: true
+  };
 
-  getTypes():string[] {
+  getProductTypes():string[] {
     return this.productTypes;
+  }
+
+  getIsChecked(){
+    return this.isChecked;
   }
 
   getOriginalProductTypes():string[]{

@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit  {
     this.product = this.getProduct(this.products); 
   }
 
-  getProduct(products): object {
+  getProduct(products) {
     const id = +this.route.snapshot.paramMap.get('id'); 
     products = this.productsService.getProducts();
     for (let type in products){

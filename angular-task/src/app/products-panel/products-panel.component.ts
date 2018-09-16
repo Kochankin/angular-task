@@ -23,7 +23,7 @@ export class ProductsPanelComponent implements OnInit {
     this.getPanelProducts();
  }
   
-  getPanelProducts():void{ 
+  getPanelProducts(){ 
     this.products = this.productsService.getPanelProducts(this.type);
     this.totalProductsNum = this.products.length;
   }

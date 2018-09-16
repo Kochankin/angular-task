@@ -7,7 +7,7 @@ import { ProductsTemplate } from './../const/productsTemplate';
   styleUrls: ['./product-preview.component.css']
 })
 export class ProductPreviewComponent implements OnInit {
-  products: ProductsTemplate;
+  products;
   @Input() product;
 
   constructor() { }

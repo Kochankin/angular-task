@@ -2,7 +2,7 @@
   <form>
     <label>Sort by</label>
     <select name="sort" (change)="sortProducts($event.target.value)"> 
-        <option *ngFor="let sortParam of sortParams" [value]="sortParam">{{sortParam | uppercase }} </option>
+        <option *ngFor="let sortParam of sortParams; let i=index" [value]="sortParam" [selected]="selected.sortParam===sortParam">{{sortParam | uppercase }} </option>
     </select>
   </form>   
 
