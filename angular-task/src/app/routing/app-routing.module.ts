@@ -1,5 +1,5 @@
 import { NgModule }  from '@angular/core';
-import { ModuleWithProviders } from '@angular/core';
+//import { ModuleWithProviders } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ProductDetailsComponent } from './../product-details/product-details.component';
@@ -9,7 +9,7 @@ import { NotFoundComponent } from './../not-found/not-found.component';
 export const routes: Routes = [
     { path: '', redirectTo: 'main', pathMatch: 'full' },
     { path: 'main', component: MainComponent },
-    { path: 'detail/:id', loadChildren: './product-details/product-details.module#ProductDetailsComponent' },
+    { path: 'detail/:id', component:ProductDetailsComponent},
     { path: '**', component: NotFoundComponent },
   ];
 

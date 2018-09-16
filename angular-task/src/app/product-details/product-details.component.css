@@ -8,8 +8,8 @@ span{
 }
 
 button{
-    /* border: none;
-    background: none;    */
+    border: none;
+    background: none;   
     transition: 0.4s all ease-out;
 }
 
