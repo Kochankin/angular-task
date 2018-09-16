@@ -65,10 +65,7 @@ div.content{
 }
 
 button:hover {cursor: pointer;}
-button:focus, button:active {
-    outline:none;
-    border: none;
-}
+*:focus, *:active {outline:none !important;}
 
 label, input {cursor: pointer;}
 
